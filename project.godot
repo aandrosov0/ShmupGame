@@ -1,0 +1,83 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Entity",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://scripts/bullet.gd"
+}, {
+"base": "Ship",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://scripts/enemy.gd"
+}, {
+"base": "Area2D",
+"class": "Entity",
+"language": "GDScript",
+"path": "res://scripts/entity.gd"
+}, {
+"base": "Ship",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scripts/player.gd"
+}, {
+"base": "Entity",
+"class": "Ship",
+"language": "GDScript",
+"path": "res://scripts/ship.gd"
+} ]
+_global_script_class_icons={
+"Bullet": "",
+"Enemy": "",
+"Entity": "",
+"Player": "",
+"Ship": ""
+}
+
+[application]
+
+config/name="Shmup"
+run/main_scene="res://scenes/main.tscn"
+config/icon="res://icon.png"
+
+[debug]
+
+gdscript/warnings/shadowed_variable=false
+gdscript/warnings/return_value_discarded=false
+
+[display]
+
+window/size/width=1080
+window/size/height=640
+window/stretch/mode="2d"
+
+[layer_names]
+
+2d_render/layer_1="item"
+2d_render/layer_2="bullet"
+2d_render/layer_3="player"
+2d_render/layer_4="enemy"
+2d_render/layer_5="HUD"
+2d_physics/layer_1="items"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="player"
+2d_physics/layer_4="bullet"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"
