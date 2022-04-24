@@ -9,6 +9,4 @@ func _physics_process(delta):
 
 func _on_screen_entered():
 	$ShootTimer.start()
-
-func _on_shoot_timeout():
-	._shoot("res://scenes/bullet_level1.tscn", false, $BulletSpawnPosition2D.global_position)
+	invicible = false		

@@ -11,10 +11,7 @@ func _physics_process(delta):
 	position.y += speed * delta 
 
 func _on_area_entered(area):
-	if area.invicible:
-		area.hit(damage)
-		queue_free()
-
-func reverse(): 
-	speed *= -1
-	scale *= -1
+	if not area.invicible:
+		_destroy()
+		
+	area.hit(damage)
