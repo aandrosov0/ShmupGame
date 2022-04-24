@@ -4,6 +4,8 @@ class_name Ship
 export(int) var _health 
 export(float) var _speed
 
+export(bool) var invicible = true 
+
 func _ready():
 	$ShootTimer.connect("timeout", self, "_on_shoot_timeout")
 

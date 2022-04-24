@@ -11,8 +11,9 @@ func _physics_process(delta):
 	position.y += speed * delta 
 
 func _on_area_entered(area):
-	area.hit(damage)
-	queue_free()
+	if area.invicible:
+		area.hit(damage)
+		queue_free()
 
 func reverse(): 
 	speed *= -1
